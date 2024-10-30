@@ -154,7 +154,7 @@ in {
 
       postStart = ''
         # wait for the service to start
-        wait-for-it -t 30 localhost:${toString cfg.port} || exit 1
+        ${pkgs.wait-for-it}/bin/wait-for-it -t 30 localhost:${toString cfg.port} || exit 1
 
         # invoke script to configure the service according to the settings.json file.
         ${pkgs.writeShellScript "configure-radarr" ''
