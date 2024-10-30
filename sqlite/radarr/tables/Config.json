@@ -1,0 +1,5 @@
+{"Id": 1, "Key": "plexclientidentifier", "Value": "4d2c38f5-0d6d-4010-afee-a5fe35384075"}
+{"Id": 2, "Key": "rijndaelpassphrase", "Value": "fbc1f893-5bd1-4477-8958-3f2b0c6bc98b"}
+{"Id": 3, "Key": "hmacpassphrase", "Value": "753dd4df-f0c3-477c-9d11-1b97d2a93303"}
+{"Id": 4, "Key": "rijndaelsalt", "Value": "6f014383-6db9-400c-bcaa-a8468228c171"}
+{"Id": 5, "Key": "hmacsalt", "Value": "7eb40c71-ad7d-4dfd-92d0-ce5e27f7990a"}

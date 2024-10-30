@@ -1,0 +1,11 @@
+{"Id": 1, "TypeName": "NzbDrone.Core.Messaging.Commands.MessagingCleanupCommand", "Interval": 5, "LastExecution": "2024-10-30 04:01:20.9914427Z", "LastStartTime": "2024-10-30 04:01:20.9855905Z"}
+{"Id": 2, "TypeName": "NzbDrone.Core.Update.Commands.ApplicationCheckUpdateCommand", "Interval": 360, "LastExecution": "2024-10-30 03:06:00.9520253Z", "LastStartTime": "0001-01-01 04:57:00Z"}
+{"Id": 3, "TypeName": "NzbDrone.Core.HealthCheck.CheckHealthCommand", "Interval": 360, "LastExecution": "2024-10-30 03:06:00.9544546Z", "LastStartTime": "0001-01-01 04:57:00Z"}
+{"Id": 4, "TypeName": "NzbDrone.Core.Movies.Commands.RefreshMovieCommand", "Interval": 1440, "LastExecution": "2024-10-30 03:06:00.9568928Z", "LastStartTime": "0001-01-01 04:57:00Z"}
+{"Id": 5, "TypeName": "NzbDrone.Core.Housekeeping.HousekeepingCommand", "Interval": 1440, "LastExecution": "2024-10-30 03:06:00.959278Z", "LastStartTime": "0001-01-01 04:57:00Z"}
+{"Id": 6, "TypeName": "NzbDrone.Core.MediaFiles.Commands.CleanUpRecycleBinCommand", "Interval": 1440, "LastExecution": "2024-10-30 03:06:00.961683Z", "LastStartTime": "0001-01-01 04:57:00Z"}
+{"Id": 7, "TypeName": "NzbDrone.Core.Movies.Commands.RefreshCollectionsCommand", "Interval": 1440, "LastExecution": "2024-10-30 03:06:00.9642164Z", "LastStartTime": "0001-01-01 04:57:00Z"}
+{"Id": 8, "TypeName": "NzbDrone.Core.Backup.BackupCommand", "Interval": 10080, "LastExecution": "2024-10-30 03:06:00.9667167Z", "LastStartTime": "0001-01-01 04:57:00Z"}
+{"Id": 9, "TypeName": "NzbDrone.Core.Indexers.RssSyncCommand", "Interval": 30, "LastExecution": "2024-10-30 03:36:20.8293212Z", "LastStartTime": "2024-10-30 03:36:20.8051083Z"}
+{"Id": 10, "TypeName": "NzbDrone.Core.ImportLists.ImportListSyncCommand", "Interval": 5, "LastExecution": "2024-10-30 04:02:51.0033453Z", "LastStartTime": "2024-10-30 04:02:50.9964855Z"}
+{"Id": 11, "TypeName": "NzbDrone.Core.Download.RefreshMonitoredDownloadsCommand", "Interval": 1, "LastExecution": "2024-10-30 04:04:51.0181625Z", "LastStartTime": "2024-10-30 04:04:51.0091951Z"}
