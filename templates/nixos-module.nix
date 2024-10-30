@@ -104,6 +104,8 @@ in {
   };
 
   config = mkIf cfg.enable {
+    disabledModules = ["<nixos/services/misc/radarr.nix>"];
+
     systemd.tmpfiles.rules = [
       "d '${cfg.dataDir}' 0700 ${cfg.user} ${cfg.group} - -"
     ];
@@ -135,18 +137,32 @@ in {
             ${optionalString (cfg.sslCertPassword != "") "<SslCertPassword>${cfg.sslCertPassword}</SslCertPassword>"}
           </Config>
         '';
+
+        settingsFile = pkgs.writeText "${cfg.dataDir}/settings.json" (builtins.toJSON cfg.settings);
       in ''
         mkdir -p ${cfg.dataDir}
         if [ ! -f ${cfg.dataDir}/config.xml ]; then
           cp ${configFile} ${cfg.dataDir}/config.xml
         fi
+        if [ ! -f ${cfg.dataDir}/settings.json ]; then
+          cp ${settingsFile} ${cfg.dataDir}/settings.json
+        fi
         chown -R ${cfg.user}:${cfg.group} ${cfg.dataDir}
         chmod 600 ${cfg.dataDir}/config.xml
-        cp ${builtins.toJSON cfg.settings} ${cfg.dataDir}/settings.json
+        chmod 600 ${cfg.dataDir}/settings.json
       '';
 
       postStart = ''
-        ${setOptionsScript} ${cfg.dataDir}/settings.json
+        # wait for the service to start
+        wait-for-it -t 30 localhost:${toString cfg.port} || exit 1
+
+        # invoke script to configure the service according to the settings.json file.
+        ${pkgs.writeShellScript "configure-radarr" ''
+          ${pkgs.internal.automatarr}/bin/automatarr \
+            --api-key=${cfg.apiKey} \
+            --file="${cfg.dataDir}/settings.json" \
+            "http://localhost:${toString cfg.port}"
+        ''}
       '';
 
       serviceConfig = {
